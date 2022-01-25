@@ -1,25 +1,25 @@
 # godonation-contracts
 
 
-## Proposito
+# Proposito
 
 <p>Com o intuito de tornar o processo de ONGs receberem doacoes e de doadores fazerem doacoes a ONGs mais seguro, acessivel, descentralizado, facil e rapido, a GoBlockchain torna publica uma solucao que usa da tecnologia do Blockchain a fim de alcancar o intuito descrito.</p>
 
-#### Funcionalidades
+# Funcionalidades
 
 <p>Nesta secao, estao descritas todas as funcionalidades possiveis ao usuario, tanto o usuario que sera apenas um doador, tanto o usuario que sera apenas uma ONG, e tambem para um usuario que sera ambos. De forma visual, as funcionalidade estao descritas no diagrama UML.</p>
 
-##### Diagrama UML
+## Diagrama UML
 
 Anexar Diagrama UML
 
-##### Descricao do UML:
+## Descricao do UML:
 
-##### Contrato Doacao:
+## Contrato Doacao:
 
 <p>Responsabilidade: Responsavel por definir as principais funcoes de interacao do usuario com o DApp de doacoes para as ONGs, assim como permite um usuario de criar suas propria ONG e criar projetos atrelada a mesma a fim de receber doacoes.</p>
 
-##### Funcoes:
+### Funcoes:
 
 `criarONG(string _ongNome)`: cria uma struct ONG com o ongNome igual a string passada como argumento.
 
@@ -33,7 +33,7 @@ Anexar Diagrama UML
 
 `fazerDoacao(uint16 _projetoID)`: Usuario escolhe um projeto por meio do seu ID e realiza a doacao por meio do msg.value
 
-##### Funcoes de Leitura:
+### Funcoes de Leitura:
 
 Estas funcoes abaixo apenas fazem a requisicao de dados contidos na blockchain a fim de usuario ter um registro do que realmente esta' acontecendo na aplicacao.
 
@@ -54,7 +54,7 @@ Estas funcoes abaixo apenas fazem a requisicao de dados contidos na blockchain a
 `verDoacoes(address _address) => ************`: retorna o registro de todas as doacoes de determinado usuario.
 
 	 
-##### Descricao de Variaveis:
+### Descricao de Variaveis:
 
 <p>Algumas variaveis fazem-se necessarias para que as funcoes acima desempenhem os seus papeis:</p>
 
@@ -112,7 +112,14 @@ ongID: uint16
 
 `enum statusProjeto{ Aberto, Finalizado, Sacado}`: enumera  tres estados possiveis para um projeto em relacao a sua disponibilidade de receber doacoes. Modo Aberto: projeto aceita doacoes e ainda nao pode ter o saque efetuado. Modo Finalizado: projeto nao aceita mais doacoes e pode ter o saque efetuado. Modo Sacado: projeto nao aceita mais doacoes e ja teve seu saldo sacado, ficando apenas disponivel para visualizacao agora.
 
+|                |Aberto                          |Finalizado                         |   Sacado                                 |
+|----------------|----------------|----------------|------------------
+|Doacoes |         Aceita         |  Nao Aceita            |      Nao Aceita      |
+|Saque          |      Nao Aceita | Aceita           |         Nao Aceita       |
+
 ----
+
+`doacoes`:
 
 ----
 
@@ -121,22 +128,3 @@ ongID: uint16
 ----
 
 `doacaoTotalDApp: uint128`: armazena o valor total de doacoes da DApp ate' o momento.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
